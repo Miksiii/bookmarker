@@ -1,0 +1,47 @@
+<div class="modal fade" id="siteAdd" tabindex="-1" role="dialog" aria-labelledby="siteAddLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="siteAddLabel">Add new site</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="addNewSite()">
+
+          <!-- Site address -->
+          <div class="form-group">
+            <label>Site URL:</label>
+            <input type="text" class="form-control" ng-model="site.url" placeholder="" required>
+          </div>
+
+          <!-- Site color -->
+          <div class="form-group">
+            <label>Pick a color</label>
+            <select class="form-control" ng-model="site.color" ng-init="site.color = getColorsList()[0]" required>
+              <option ng-repeat="color in getColorsList()">{{color}}</option>
+            </select>
+          </div>
+
+          <!-- Choose group -->
+          <div class="form-group checklist-model-groups" ng-if="getSizeOfGroups() > 0">
+            <label>Select groups:</label>
+            <p ng-repeat="group in getGroupsList()">
+              <input type="checkbox" checklist-model="site.groups" checklist-value="group.id"> {{group.name}}
+            </p>
+          </div>
+
+          <!-- Group response -->
+          <div class="form-group">
+            {{responseMessage}}
+          </div>
+
+          <!-- Buttons -->
+          <div class="modal-footer">
+            <a type="button" data-dismiss="modal">Close</a> |
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

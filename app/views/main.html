@@ -1,0 +1,129 @@
+<div class="row"> <!-- controller -->
+
+  <div class="col-md-3">
+
+    <h2>Groups</h2>
+    <p>Preview or add
+      <a href="#/" class="cta" data-toggle="modal" data-target="#groupAdd" >new group</a>
+    </p>
+
+    <div class="row accordions">
+      <div class="col-md-12 col-lg-12 col-xs-12">
+
+        <!-- Uncategorized group -->
+        <div class="accordion">
+          <div class="accordion-toggle bgcolor-red">
+            <h4>
+              Uncategorized
+            </h4>
+          </div>
+          <div class="accordion-content">
+            <ul class="list" ng-repeat="site in getSitesList() | filter: isUncategorized as uncat">
+              <li>
+                <a class="item color-{{site.color}}">{{site.url}}</a>
+              </li>
+            </ul>
+            <ul class="list">
+              <li>
+                <a><b>{{uncat.length}}</b> uncategorized in queue.</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Categorized group -->
+        <div class="accordion" ng-repeat="group in getGroupsList()">
+          <div class="accordion-toggle bgcolor-{{group.color}}"
+               id="accord-{{group.id}}"
+               ng-click="toggleAccordionVisibility(group.id)">
+            <h4>
+              {{group.name}} ({{getSitesLengthByGroup(group.id)}})
+              <i class="toggle-indicator">&#9650;</i>
+            </h4>
+          </div>
+          <div class="accordion-content">
+            <ul class="list">
+              <li ng-repeat="site in group['sites'] | orderObjectBy:'url':false"> <!-- false/true => asc/desc -->
+                <a class="item color-{{site.color}}">{{site.url}}</a>
+              </li>
+              <li class="group-options">
+								<span data-toggle="modal" data-target="#groupEdit"
+                      ng-click="editGroup(group)">
+								      Edit |
+								</span>
+								<span ng-click="destroyGroup(group)">
+											Delete |
+								</span>
+                <span data-toggle="modal" data-target="#siteAdd"
+                      ng-click="setDefaultGroupForSite(group)">
+                      Add site <a href="#/">+</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-9 col-lg-9 col-sm-12"> <!-- main content -->
+
+    <h2> Full list of websites and groups </h2>
+    <p>You can always add a new site or group by pressing
+      <a href="#/" class="cta" data-toggle="modal" data-target="#siteAdd"
+        ng-click="displayAddSiteChecklistModel(true)">
+        new website
+      </a>
+    </p>
+
+    <!-- full list of sites -->
+    <div class="row list-holder">
+      <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="tabs">
+          <div class="links">
+            <ul>
+              <li class="active">Websites ({{getSitesList().length}})</li>
+              <li>
+                <input type="text" ng-model="query" placeholder="Search sites!" class="searcher">
+              </li>
+            </ul>
+          </div>
+
+          <!-- Content (List of Sites) -->
+          <div class="tabs-content">
+            <ul class="list">
+              <li ng-repeat="site in getSitesList() | filter:query">
+                <a class="item color-{{site.color}}">{{site.url}}</a>
+								<span>
+									<a href="#/" class="edit" data-toggle="modal" data-target="#siteEdit"
+                     ng-click="editSite(site)">
+                    Edit
+                  </a> |
+									<a href="#/" class="delete"
+                     ng-click="destroySite(site)">
+                    Delete
+                  </a>
+								</span>
+              </li>
+            </ul>
+            </table>
+          </div>
+        </div>
+
+        <!-- json output reference -->
+        <p class="json">
+          <a href="#/" data-toggle="modal" class="cta" data-target="#jsonstruct">View JSON</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div ng-include="'views/addnewgroup.html'"></div>
+  <div ng-include="'views/editgroup.html'"></div>
+  <div ng-include="'views/addnewsite.html'"></div>
+  <div ng-include="'views/editsite.html'"></div>
+  <div ng-include="'views/datastructure.html'"></div>
+
+</div> <!-- controller ends -->

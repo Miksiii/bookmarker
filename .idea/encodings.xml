@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/collection/bookmarks.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/collection/colors.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/controllers/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/filters/bookmarkfilter.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/services/bookmarkapi.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/services/group.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/services/site.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/main.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/addnewgroup.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/addnewsite.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/datastructure.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/editgroup.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/editsite.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/main.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bower.json" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

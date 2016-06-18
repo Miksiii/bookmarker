@@ -1,0 +1,47 @@
+<div class="modal fade" id="siteEdit" tabindex="-1" role="dialog" aria-labelledby="siteEditLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="siteEditLabel">Edit your site</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="updateSite()">
+
+          <!-- Site URL-->
+          <div class="form-group">
+            <label>Site URL:</label>
+            <input type="text" class="form-control" ng-model="siteCopy.url" placeholder="" required>
+          </div>
+
+          <!-- Group color -->
+          <div class="form-group">
+            <label>Pick a color</label>
+            <select class="form-control" ng-model="siteCopy.color" ng-init="siteCopy.color = getColorsList()[0]" required>
+              <option ng-repeat="color in getColorsList()">{{color}}</option>
+            </select>
+          </div>
+
+          <!-- Choose group -->
+          <div class="form-group" ng-if="getSizeOfGroups() > 0">
+            <label>Select groups:</label>
+            <p ng-repeat="group in getGroupsList()">
+              <input type="checkbox" checklist-model="siteCopy.groups" checklist-value="group.id"> {{group.name}}
+            </p>
+          </div>
+
+          <!-- Group response -->
+          <div class="form-group">
+            {{responseMessage}}
+          </div>
+
+          <!-- Buttons -->
+          <div class="modal-footer">
+            <a type="button" data-dismiss="modal">Close</a> |
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

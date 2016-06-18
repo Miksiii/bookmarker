@@ -1,0 +1,257 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import 'bootstrap-sass-official/assets/stylesheets/_bootstrap.scss';
+// endbower
+
+@import 'reset.scss';
+@import 'mixins.scss';
+
+/* Colors */
+$border: gainsboro;
+$red: #FF3300;
+$blue: #0066CC;
+$green: green;
+$orange: orange;
+$purple: purple;
+
+/* Links */
+* a,
+* a:hover,
+* a:visited,
+* a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+* a:hover {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Trebuchet MS";
+  background-color: #eaeaea;
+}
+
+/* Full width container */
+.container-full {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Left aside div with accordions of groups */
+.accordions {
+
+  /* Single accordion */
+  .accordion {
+    @include box-shadow(#d1d7d7);
+    background-color: #ffffff;
+    margin-bottom: 10px;
+
+    /* for ungrouped websites only */
+    .ungrouped {
+      background-color: dimgray;
+    }
+
+    /* Title bar */
+    .accordion-toggle {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      h4 {
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 15px 15px 15px 15px;
+        border-bottom: 1px solid $border;
+      }
+
+      /* Arrow down indicator */
+      .toggle-indicator {
+        font-style: normal;
+        float: right;
+      }
+
+      /* Over and out are responsible for object transformation */
+      .over {
+        transform: rotate( -180deg );
+        transition: transform 150ms ease;
+      }
+
+      .out {
+        transform: rotate( -360deg );
+        transition: transform 150ms ease;
+      }
+    }
+
+
+    /* Content of accordion */
+    .accordion-content {
+      margin-top: -10px;
+
+      /* ul tag for aside left area */
+      .list {
+        list-style-type: none;
+        padding: 0;
+
+        /* each row */
+        li {
+          cursor: pointer;
+          padding: 7px 15px 7px 15px;
+
+          a {
+            font-size: 14px;
+          }
+
+          /* website address */
+          .item {
+            margin: 21px 30px 0px 0px;
+          }
+        }
+
+        /* Even and odd stuff in the list */
+        li:nth-child(even) {
+          background-color: #F7F9FD;
+        }
+
+        /* Last child of list is actually an add option */
+        .group-options {
+          color: #0066CC;
+
+          a {
+            padding: 0px 6px 1px 6px;
+            box-sizing: border-box;
+            @include border-radius(100%);
+            font-size: 17px;
+            background-color: #0066CC;
+            color: white;
+            font-weight: bold;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+/* Container for main content, lists */
+.list-holder {
+  padding: 10px 0px 10px 0px;
+
+  /* Top area that holds links for websites, groups and archived objects */
+  .tabs {
+    @include box-shadow(#d1d7d7);
+    background-color: #ffffff;
+
+    /* Actual links */
+    .links {
+      cursor: pointer;
+      padding: 15px 15px 10px 15px;
+      border-bottom: 1px solid gainsboro;
+      border-bottom: 1px solid $border;
+
+      /* main search button */
+      .searcher {
+        font-weight: normal;
+        outline: none;
+        @include border-radius(2px);
+        border: 1px solid gainsboro;
+        padding: 2px 5px;
+      }
+
+      /* who is active link in tab */
+      .active {
+        color: black;
+      }
+
+      /* Tabs with links */
+      ul {
+        padding: 0;
+        list-style-type: none;
+
+        li {
+          display: inline-block;
+          padding: 0px 10px 0px 10px;
+          font-weight: bold;
+          color: dimgray;
+        }
+
+      }
+    }
+
+    /* List of websites, groups, etc. */
+    .tabs-content {
+      background-color: #ffffff;
+
+      /* ul tag */
+      .list {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          cursor: pointer;
+          padding: 7px 15px 7px 25px;
+
+          a {
+            font-size: 16px;
+          }
+
+          /* Web address */
+          .item {
+            margin: 21px 30px 0px 0px;
+          }
+
+          /* Additional options for item such as del, edit */
+          span {
+            float: right;
+
+            a {
+              font-size: 14px;
+            }
+          }
+        }
+
+        /* Even and odd stuff */
+        li:nth-child(even) {
+          background-color: #F7F9FD;
+        }
+
+      }
+    }
+  }
+}
+
+/* Font colorizers */
+.edit { color: $blue !important; }
+.delete { color: $red !important; }
+.color-red { color: $red !important; }
+.color-green { color: $green !important; }
+.color-blue { color: $blue!important; }
+.color-orange { color: $orange !important; }
+.color-purple { color: $purple !important; }
+
+/* Bg colorizers */
+.bgcolor-red { background-color: $red; }
+.bgcolor-green { background-color: $green; }
+.bgcolor-blue { background-color: $blue; }
+.bgcolor-orange { background-color: $orange; }
+.bgcolor-purple { background-color: $purple; }
+
+/* Action buttons have this */
+.cta {
+  background: $blue !important;
+  text-decoration: none !important;
+  font-weight: bold;
+  color: white !important;
+  @include border-radius(5px);
+  padding: 3px 5px;
+  outline: none !important;
+}
+
+.json {
+  margin-top: 10px;
+}

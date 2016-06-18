@@ -1,0 +1,105 @@
+{
+  "sites": [
+    {
+      "id": 1,
+      "url": "www.google.com",
+      "color": "blue",
+      "groups": [1]
+    },
+    {
+      "id": 2,
+      "url": "www.twitter.com",
+      "color": "red",
+      "groups": [2]
+    },
+    {
+      "id": 3,
+      "url": "www.facebook.com",
+      "color": "blue",
+      "groups": [2]
+    },
+    {
+      "id": 4,
+      "url": "www.instagram.com",
+      "color": "blue",
+      "groups": [2]
+    },
+    {
+      "id": 5,
+      "url": "www.tipsandtricks.com",
+      "color": "orange",
+      "groups": [1]
+    },
+    {
+      "id": 6,
+      "url": "www.eatsleep.com",
+      "color": "blue",
+      "groups": []
+    },
+    {
+      "id": 7,
+      "url": "www.raverepeat.com",
+      "color": "blue",
+      "groups": [3]
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "name": "Searching Websites",
+      "color": "green",
+      "sites": [
+        {
+          "id": 1,
+          "url": "www.google.com",
+          "color": "blue",
+          "groups": [1]
+        },
+        {
+          "id": 5,
+          "url": "www.tipsandtricks.com",
+          "color": "orange",
+          "groups": [1]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Social Network Sites",
+      "color": "blue",
+      "sites": [
+        {
+          "id": 2,
+          "url": "www.twitter.com",
+          "color": "red",
+          "groups": [2]
+        },
+        {
+          "id": 3,
+          "url": "www.facebook.com",
+          "color": "blue",
+          "groups": [2]
+        },
+        {
+          "id": 4,
+          "url": "www.instagram.com",
+          "color": "blue",
+          "groups": [2]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Third group",
+      "color": "purple",
+      "sites": [
+        {
+          "id": 7,
+          "url": "www.raverepeat.com",
+          "color": "blue",
+          "groups": [3]
+        }
+      ]
+    }
+  ]
+}
